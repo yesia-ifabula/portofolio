@@ -3,8 +3,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: isProd ? "/YesiaPlorina.github.io" : "",
-  assetPrefix: isProd ? "/YesiaPlorina.github.io/" : "",
+  basePath: isProd ? "/portofolio" : "",
+  assetPrefix: isProd ? "/portofolio/" : "",
   output: "export",
   images: { unoptimized: true },
 };
