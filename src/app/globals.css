@@ -27,12 +27,12 @@ body {
 
 @media (max-height: 710px) {
   .h1-move-down {
-    position: absolute !important;
-    top: 43% !important;
-    right: 2.2rem !important;
-    transform: translateY(-50%) !important;
-    margin-top: 0 !important;
-    order: unset !important;
-    text-align: right !important;
+    position: static !important;
+    top: unset !important;
+    right: unset !important;
+    transform: none !important;
+    margin-top: 1.5rem !important;
+    order: 2 !important;
+    text-align: center !important;
   }
 }

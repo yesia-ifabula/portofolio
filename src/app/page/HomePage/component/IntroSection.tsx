@@ -7,13 +7,13 @@ const IntroSection: React.FC = () => {
         <section style={{ padding: '2rem 0', textAlign: 'center' }}>
             <div className="flex flex-col items-center mb-6 relative">
                 <Image
-                    src="homeImage.svg"
+                    src="home.svg"
                     alt="Yesia Plorina"
                     width={1000}
                     height={2000}
                     priority
                 />
-                <h1
+                {/* <h1
                     className="
                         text-4xl font-extrabold text-right
                         absolute top-10 right-4
@@ -24,7 +24,7 @@ const IntroSection: React.FC = () => {
                     style={{ color: "#C8A2C8" }}
                     >
                     Software Engineer
-                </h1>
+                </h1> */}
             </div>
         </section>
     );
