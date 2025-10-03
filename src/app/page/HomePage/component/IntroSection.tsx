@@ -19,9 +19,10 @@ const IntroSection: React.FC = () => {
                         absolute top-10 right-4
                         max-[830px]:static max-[830px]:order-last max-[830px]:mt-4
                         max-[600px]:text-2xl
+                        h1-move-down
                     "
                     style={{ color: "#C8A2C8" }}
-                >
+                    >
                     Software Engineer
                 </h1>
             </div>
