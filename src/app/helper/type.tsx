@@ -14,3 +14,16 @@ export type Education = {
   period: string;
   urlDoc: string;
 };
+
+type intro = {
+  title: string;
+  name: string;
+  description: string;
+}
+
+export type AboutMobileProp = {
+  intro: intro;
+  experiences: Experience[];
+  educations: Education[];
+  programmingLanguages: string[];
+};
