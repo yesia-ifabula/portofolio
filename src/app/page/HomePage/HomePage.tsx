@@ -5,6 +5,7 @@ import Header from "../../component/Header";
 import { useEffect, useRef, useState } from "react";
 import IntroSection from "./component/IntroSection";
 import About from "./component/About";
+import Product from "./component/Project";
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -83,11 +84,8 @@ export default function HomePage() {
                 sectionRefs.current["projects"] = el as HTMLElement | null;
             }}          
           >
-            <h2 className="text-3xl font-bold mb-4">Projects</h2>
-            <p className="text-gray-700 mb-8 text-center max-w-xl">
-              Daftar project yang pernah saya buat akan tampil di sini.
-            </p>
             {/* Tambahkan daftar project di sini */}
+            <Product />
           </AnimatedSection>
 
           {/* Contact Section */}
