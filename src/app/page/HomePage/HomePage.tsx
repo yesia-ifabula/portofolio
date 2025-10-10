@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import IntroSection from "./component/IntroSection";
 import About from "./component/About";
 import Product from "./component/Project";
+import ContactMe from "./component/ContactMe";
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -118,10 +119,7 @@ export default function HomePage() {
                 sectionRefs.current["contact"] = el as HTMLElement | null;
             }}
           >
-            <h2 className="text-3xl font-bold mb-4">Contact</h2>
-            <p className="text-gray-700 mb-8 text-center max-w-xl">
-              Silakan hubungi saya melalui email: yesia@example.com
-            </p>
+            <ContactMe />
             {/* Tambahkan form kontak atau info lain di sini */}
           </AnimatedSection>
           {/* Footer */}
