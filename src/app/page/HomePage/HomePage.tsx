@@ -11,7 +11,16 @@ const sections = ["home", "about", "projects", "contact"];
 
 export default function HomePage() {
  const [active, setActive] = useState("projects");
+ const [isMobile, setIsMobile] = useState(false);
+
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -55,7 +64,16 @@ export default function HomePage() {
                 sectionRefs.current["home"] = el as HTMLElement | null;
             }}
           >
-            <IntroSection />
+            <>
+              <IntroSection isMobile={isMobile} />
+              {active !== "contact" && (
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+                  <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                      <path stroke="#C8A2C8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+              )}
+            </>
           </AnimatedSection>
 
           {/* Hero Section */}
@@ -70,7 +88,7 @@ export default function HomePage() {
                 sectionRefs.current["about"] = el as HTMLElement | null;
             }}
           >
-            <About />
+            <About isMobile={isMobile} />
           </AnimatedSection>
           {/* Projects Section */}
           <AnimatedSection
