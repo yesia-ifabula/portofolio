@@ -27,3 +27,16 @@ export type AboutMobileProp = {
   educations: Education[];
   programmingLanguages: string[];
 };
+
+export type ProductItemProps = {
+    image: string;
+    title: string;
+    description?: string;
+    item: {
+      titleItem: string;
+      image: string;
+      description: string,
+      link: { linkTitle: string; appstore?: string; playstore?: string }[],
+      buildWith: string;
+    }[];
+};

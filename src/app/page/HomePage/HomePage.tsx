@@ -104,7 +104,7 @@ export default function HomePage() {
             }}          
           >
             {/* Tambahkan daftar project di sini */}
-            <Product />
+            <Product isMobile={isMobile}/>
           </AnimatedSection>
 
           {/* Contact Section */}

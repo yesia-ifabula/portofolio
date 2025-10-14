@@ -8,6 +8,17 @@ describe("ProductItem", () => {
     image: "/home.svg",
     title: "Project 1",
     description: "Deskripsi singkat Project 1",
+    item: [
+      {
+        titleItem: "Item 1",
+        image: "/item1.svg",
+        description: "Deskripsi item 1",
+        link: [
+          { linkTitle: "Link 1", appstore: "https://appstore.com", playstore: "https://play.google.com" }
+        ],
+        buildWith: "React, TypeScript"
+      }
+    ]
   };
 
   it("menampilkan judul produk", () => {
