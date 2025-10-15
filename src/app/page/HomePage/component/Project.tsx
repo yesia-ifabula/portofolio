@@ -74,7 +74,7 @@ const Project: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
         item: [
           {
             titleItem: "TCASS",
-            image: "image.svg",
+            image: "tcass.svg",
             description: "TCASS is an application used by Toyota, designed for its dealers to facilitate parts ordering and other approval processes.",
             link: [],
             buildWith: "build with Next js",

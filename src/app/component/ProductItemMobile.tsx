@@ -19,7 +19,7 @@ const ProductItemMobile: React.FC<ProductItemProps> = ({ item }) => {
                             height={80}
                             className="mb-3 object-contain rounded"
                         />
-                        <h2 className="text-base font-semibold mb-2 text-center">{product.titleItem}</h2>
+                        <h2 className="text-base font-semibold mb-2 text-center text-[#060606]">{product.titleItem}</h2>
                         <p className="text-xs text-gray-700 mb-2 text-center">{product.description}</p>
                         <div className="text-xs text-gray-500 mb-2 text-center">{product.buildWith}</div>
                         <div className="flex flex-wrap gap-2 justify-center">

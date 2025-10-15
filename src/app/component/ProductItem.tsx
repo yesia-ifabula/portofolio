@@ -35,7 +35,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, title }) => {
               </div>
               {/* Content */}
               <div className="flex-1 flex flex-col w-full">
-                <h2 className="text-lg font-semibold mb-1">{product.titleItem}</h2>
+                <h2 className="text-lg font-semibold mb-1 text-[#060606]">{product.titleItem}</h2>
                 <p className="text-sm text-gray-700 mb-2">{product.description}</p>
                 {product.buildWith && (
                   <div className="text-xs text-gray-500 mb-2">
@@ -94,7 +94,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item, title }) => {
               </div>
               {/* Content */}
               <div className="flex-1 flex flex-col w-full">
-                <h2 className="text-lg font-semibold mb-1">{product.titleItem}</h2>
+                <h2 className="text-lg font-semibold mb-1 text-[#060606]">{product.titleItem}</h2>
                 <p className="text-sm text-gray-700 mb-2">{product.description}</p>
                 {product.buildWith && (
                   <div className="text-xs text-gray-500 mb-2">
