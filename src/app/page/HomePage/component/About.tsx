@@ -50,28 +50,28 @@ const About: React.FC <{ isMobile: boolean }> = ({ isMobile }) => {
             institution: "Hacktiv8 Indonesia",
             institutionUrl: "https://www.hacktiv8.com",
             period: "July 2022 - Oct 2022",
-            urlDoc: "https://drive.google.com/file/d/1JH5bX4nqf6H3j3KX8FzU5r9Zl5G5Z5Z5/view?usp=sharing",
+            urlDoc: "https://media.licdn.com/dms/document/media/v2/C562DAQExau8TLfhmjg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1605879961419?e=1762992000&v=beta&t=zJYqGSq3EkhDHYKMeSfqn4mMPzWCb6Mo-bFoa3MydiY",
         },
         {
             study: "Kotlin Developer",
             institution: "IMA STUDIO",
             institutionUrl: "https://www.idn.id",
             period: "Nov 2019 - Nov 2019",
-            urlDoc: "https://drive.google.com/file/d/1JH5bX4nqf6H3j3KX8FzU5r9Zl5G5Z5Z5/view?usp=sharing",
+            urlDoc: "https://drive.google.com/file/d/1fBin_DXeJucK2G_C7SnYtx4Di2h2T4OR/view?usp=sharing",
         },
         {
             study: "Android Developer",
             institution: "IMA STUDIO",
             institutionUrl: "https://www.idn.id",
             period: "Nov 2018 - Des 2018",
-            urlDoc: "https://drive.google.com/file/d/1JH5bX4nqf6H3j3KX8FzU5r9Zl5G5Z5Z5/view?usp=sharing",
+            urlDoc: "https://drive.google.com/file/d/1tK3skoolH-NSenonUaEOhoCK_DmQCxRl/view?usp=share_link",
         },
         {
             study: "Bachelor of Education in Physics",
             institution: "Lambung Mangkurat University",
             institutionUrl: "",
             period: "Nov 2018 - Des 2018",
-            urlDoc: "https://drive.google.com/file/d/1JH5bX4nqf6H3j3KX8FzU5r9Zl5G5Z5Z5/view?usp=sharing",
+            urlDoc: "https://drive.google.com/file/d/1z3wh8IP39Zatkjbvjy7RAE0la6tkvWse/view?usp=sharing",
         },
     ];
 
