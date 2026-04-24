@@ -115,7 +115,6 @@ export default function HomePage() {
       setProducts(products);
     }
 
-
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory flex flex-col bg-gray-50 scroll-smooth">
           {/* Header */}
