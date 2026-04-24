@@ -1,137 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import Image from 'next/image';
 import ProductItem from "../../../component/ProductItem";
 import  ProductItemMobile from '../../../component/ProductItemMobile';
 
-const Project: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
+const Project: React.FC<{
+  isMobile: boolean,
+  products: any[]
+}> = ({
+  isMobile,
+  products
+}) => {
     const [selectedIdx, setSelectedIdx] = useState(0);
     const [open, setOpen] = useState(false);
 
-    const products = [
-      {
-        title: "TypeScript",
-        image: "tsx.svg",
-        item: [
-          {
-            titleItem: "Seva Apps",
-            image: "sevaApp.svg",
-            link: [
-              { linkTitle: "to App Store", appstore: "https://apps.apple.com/id/app/seva/id1589727482?l=id" },
-              { linkTitle: "to Play Store", playstore: "https://play.google.com/store/apps/details?id=id.seva&hl=en" }
-            ],
-            buildWith: "build with react-native typescript",
-            description: "SEVA Apps from Astra members for submitting installments for buying a car with Astra and helping buyers to calculate car purchases according to the buyer's finances. mobile is also requested with uploaded documents for instant approval and tracking history."
-          },
-          {
-            titleItem: "Seva Web",
-            image: "sevaWeb.svg",
-            link: [
-              { linkTitle: "to Website Seva", playstore: "https://www.seva.id" }
-            ],
-            buildWith: "build with react typescript",
-            description: "SEVA Website from Astra members for submitting installments for buying a car with Astra and helping buyers to calculate car purchases according to the buyer's finances. mobile is also requested with uploaded documents for instant approval and tracking history."
-          },
-        ]
-      },
-      {
-        title: "React js & ReactNative",
-        image: "jsx.svg",
-        item: [
-          {
-            titleItem: "Garda Oto",
-            image: "gardaoto.svg",
-            description: "website that provides vehicle insurance services",
-            link: [
-              { linkTitle: "to Website Garda Oto", playstore: "https://www.gardaoto.com" }
-            ],
-            buildWith: "build with React.js",
-            
-          },
-          {
-            titleItem: "Kadou",
-            image: "kadou.svg",
-            description: "Kadou Smart Locker is a modern solution for everyday storage needs.",
-            link: [
-              { linkTitle: "to App Store", appstore: "https://play.google.com/store/apps/details?id=id.kadou" },
-              { linkTitle: "to Play Store", playstore: "https://play.google.com/store/apps/details?id=id.kadou" }
-            ],
-            buildWith: "build with React.js",
-            
-          },
-          {
-            titleItem: "OVNI Mobile",
-            image: "image.svg",
-            description: "App for Traveler, and buyers can ask travelers to buy and deliver the items they want.",
-            link: [],
-            buildWith: "build with React Native Expo",
-            
-          },
-        ]
-      },
-      {
-        title: "Next js",
-        image: "nxt.svg",
-        item: [
-          {
-            titleItem: "TCASS",
-            image: "tcass.svg",
-            description: "TCASS is an application used by Toyota, designed for its dealers to facilitate parts ordering and other approval processes.",
-            link: [],
-            buildWith: "build with Next js",
-          },
-        ]
-      },
-      {
-        title: "Vue js",
-        image: "vue.svg",
-        item: [
-          { titleItem: "Make Your Todo List", image: "image.svg", description: "A project developed for a bootcamp final exam.", 
-            link: [
-              { linkTitle: "to Website", playstore: "https://fancy-todo-copenhagen-fox.web.app" }
-            ], 
-          buildWith: "build vue js" },
-        ]
-      },
-      {
-        title: "Kotlin",
-        image: "kt.svg",
-        item: [
-          {
-            titleItem: "International test center apps",
-            image: "image.svg",
-            description: "E-commerce for Internation test center product",
-            link: [],
-            buildWith: "Build with Kotlin"
-          },
-        ]
-      },
-      {
-        title: "Java Android",
-        image: "jv.svg",
-        item: [
-          {
-            titleItem: "SVP App",
-            image: "image.svg",
-            description: "An application for TOEIC test supervisors to verify whether the person taking the test matches the registered data by displaying the participant’s information in the application",
-            link: [],
-            buildWith: "Build with Kotlin & Java"
-          },
-        ]
-      },
-      // {
-      //   title: "Node js",
-      //   image: "njs.svg",
-      //   item: [
-      //     { titleItem: "Node js", image: "image.svg", description: "", link: [], buildWith: "" },
-      //   ]
-      // },
-    ];
-
-      // Burger menu state for mobile
-  const menuItems = products.map((product, idx) => ({
-    label: product.title,
-    idx,
-  }));
+    // Burger menu state for mobile
+    const menuItems = products.map((product, idx) => ({
+      label: product.title,
+      idx,
+    }));
 
   return !isMobile ? (
     <section className="w-full min-h-screen flex items-center justify-center bg-[#f5f5f5]">

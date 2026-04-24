@@ -2,7 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import { AboutMobileProp } from '@/app/helper/type';
 
-const AboutMobile = ({ intro, experiences, educations, programmingLanguages }: AboutMobileProp) => {
+const AboutMobile = ({ intro, experiences, educations, programmingLanguages, data }: AboutMobileProp) => {
   return (
     <div className="w-screen h-screen min-h-screen flex flex-col bg-white pt-16">
       {/* Section 1: Intro */}
@@ -22,10 +22,10 @@ const AboutMobile = ({ intro, experiences, educations, programmingLanguages }: A
         <div className="w-2/3 flex flex-col justify-center pl-4">
           <h1 className="text-lg font-bold">
             <span className="text-black">{intro?.title}</span>{" "}
-            <span className="text-[#A678A6]">{intro?.name}</span>
+            <span className="text-[#A678A6]">{data?.title as string}</span>
           </h1>
           <p className="text-xs text-gray-700 mt-2">
-            {intro?.description}
+            {data?.desc as string}
           </p>
         </div>
       </div>

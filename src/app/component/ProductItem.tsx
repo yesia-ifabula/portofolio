@@ -2,11 +2,30 @@ import React from 'react';
 import { ProductItemProps } from '../helper/type';
 import Image from 'next/image';
 
-const ProductItem: React.FC<ProductItemProps> = ({ item, title }) => {
+interface ProductLink {
+  appstore?: string;
+  playstore?: string;
+  linkTitle: string;
+}
+
+interface ProductData {
+  image: string;
+  titleItem: string;
+  description: string;
+  buildWith?: string;
+  link?: ProductLink[];
+}
+
+type ProductItemComponentProps = ProductItemProps & {
+  items: ProductData[];
+  title: string;
+};
+
+const ProductItem: React.FC<ProductItemComponentProps> = ({ items, title }) => {
   // Bagi item menjadi dua kolom (kiri & kanan) tanpa memaksa tinggi sama
-  const mid = Math.ceil(item.length / 2);
-  const leftItems = item.slice(0, mid);
-  const rightItems = item.slice(mid);
+  const mid = Math.ceil(items?.length / 2);
+  const leftItems = items?.slice(0, mid) || [];
+  const rightItems = items?.slice(mid) || [];
 
   return (
     <div className="w-full px-0 md:px-8 py-8 pb-16">

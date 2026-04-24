@@ -2,12 +2,12 @@ import React from 'react';
 import { ProductItemProps } from '../helper/type';
 import Image from 'next/image';
 
-const ProductItemMobile: React.FC<ProductItemProps> = ({ item }) => {
+const ProductItemMobile: React.FC<ProductItemProps> = ({ items }) => {
     return (
         <section className="w-full h-screen overflow-y-auto px-4 py-8">
             {/* Single Column for Mobile */}
             <div className="flex flex-col gap-6">
-                {item.map((product, idx) => (
+                {items.map((product, idx) => (
                     <div
                         key={idx}
                         className="bg-white rounded-lg shadow p-4 border border-gray-200 flex flex-col items-center"

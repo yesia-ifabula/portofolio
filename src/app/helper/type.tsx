@@ -5,6 +5,7 @@ export type Experience = {
   period: string;
   periodStart?: string;
   periodEnd?: string;
+  id?: string;
 };
 
 export type Education = {
@@ -26,13 +27,14 @@ export type AboutMobileProp = {
   experiences: Experience[];
   educations: Education[];
   programmingLanguages: string[];
+  data: Record<string, unknown> | null;
 };
 
 export type ProductItemProps = {
     image: string;
     title: string;
     description?: string;
-    item: {
+    items: {
       titleItem: string;
       image: string;
       description: string,

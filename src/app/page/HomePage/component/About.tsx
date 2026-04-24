@@ -3,82 +3,24 @@ import Image from "next/image";
 import { Experience, Education } from '@/app/helper/type';
 import AboutMobile from './AboutMobile';
 
-const About: React.FC <{ isMobile: boolean }> = ({ isMobile }) => {
+const About: React.FC <{
+    isMobile: boolean
+    data: Record<string, unknown> | null
+    experiences: Experience[]
+    educations: Education[]
+    programmingLanguages: string[]
+}> = ({
+    isMobile,
+    data,
+    experiences,
+    educations,
+    programmingLanguages
+}) => {
     const intro = {
         title: "Hi, I’m",
         name: "Yesia Plorina",
         description: "I am a Mobile developer with React Native Typescript, Kotlin for Android, and Java for Android. I am also a Fullstack JavaScript software engineer (Vue.js, React.js, Next.Js Typescript for Frontend, Node.js for Backend, and jQuery). Eager to learn and get to know more programming languages, because I think technology is the future.",
     }
-    const experiences: Experience[] = [
-        {
-            title: "Software Engineer - Mobile & Front-End Specialist (Full-time)",
-            company: "PT. Ifabula Digital Kreasi",
-            companyUrl: "https://ifabula.com",
-            period: "Oct 2022 - now (2 y 11 m)",
-            periodStart: "2022-10-01",
-            periodEnd: "present",
-        },
-        {
-            title: "Software Engineer - Mobile & Front-End Specialist (Full-time)",
-            company: "PT. PGI Data (Platinumetrix Global Inovasi)",
-            companyUrl: "https://pgi-data.com",
-            period: "Oct 2020 - Oct 2022 (2 y)",
-            periodStart: "2020-10-01",
-            periodEnd: "2022-10-01",
-        },
-        {
-            title: "Android Developer - (Part-time)",
-            company: "PT. International Test Center",
-            companyUrl: "https://itc-indonesia.com",
-            period: "Des 2020 - May 2021 (6 m)",
-            periodStart: "2020-12-01",
-            periodEnd: "2021-05-01",
-        },
-                {
-            title: "Android Developer - (Full-time)",
-            company: "PT. International Test Center",
-            companyUrl: "https://itc-indonesia.com",
-            period: "Mar 2019 - July 2020 (2 ys 5 m)",
-            periodStart: "2019-03-01",
-            periodEnd: "2020-07-01",
-        },
-    ];
-
-    const educations: Education[] = [
-        {
-            study: "Full stack Javascript software engineer",
-            institution: "Hacktiv8 Indonesia",
-            institutionUrl: "https://www.hacktiv8.com",
-            period: "July 2022 - Oct 2022",
-            urlDoc: "https://media.licdn.com/dms/document/media/v2/C562DAQExau8TLfhmjg/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1605879961419?e=1762992000&v=beta&t=zJYqGSq3EkhDHYKMeSfqn4mMPzWCb6Mo-bFoa3MydiY",
-        },
-        {
-            study: "Kotlin Developer",
-            institution: "IMA STUDIO",
-            institutionUrl: "https://www.idn.id",
-            period: "Nov 2019 - Nov 2019",
-            urlDoc: "https://drive.google.com/file/d/1fBin_DXeJucK2G_C7SnYtx4Di2h2T4OR/view?usp=sharing",
-        },
-        {
-            study: "Android Developer",
-            institution: "IMA STUDIO",
-            institutionUrl: "https://www.idn.id",
-            period: "Nov 2018 - Des 2018",
-            urlDoc: "https://drive.google.com/file/d/1tK3skoolH-NSenonUaEOhoCK_DmQCxRl/view?usp=share_link",
-        },
-        {
-            study: "Bachelor of Education in Physics",
-            institution: "Lambung Mangkurat University",
-            institutionUrl: "",
-            period: "Nov 2018 - Des 2018",
-            urlDoc: "https://drive.google.com/file/d/1z3wh8IP39Zatkjbvjy7RAE0la6tkvWse/view?usp=sharing",
-        },
-    ];
-
-    const programmingLanguages = [
-        "JavaScript", "TypeScript", "React", "React Native", "Vue.js",
-        "Node.js", "Kotlin", "Java", "jQuery"
-    ];
 
     function formatRange(start: string, end: string) {
         if (end === "present") return `${formatDate(start)} - Present (${getDuration(start, end)})`;
@@ -138,10 +80,10 @@ const About: React.FC <{ isMobile: boolean }> = ({ isMobile }) => {
                 {/* 1/4 tinggi: Intro */}
                     <div className="flex-1 basis-1/4 flex flex-col justify-center min-h-0">
                         <h1 className="font-inika text-xl sm:text-2xl md:text-3xl font-extrabold mb-2 w-full text-center md:text-left">
-                        <span className="text-black">{intro?.title}</span> <span className="text-[#A678A6]">{intro?.name}</span>
+                        <span className="text-black">{intro?.title}</span> <span className="text-[#A678A6]">{data?.title as string}</span>
                         </h1>
                         <p className="font-inika text-xs sm:text-sm md:text-base text-gray-700 w-full text-center md:text-left">
-                            {intro?.description}
+                            {data?.desc as string}
                         </p>
                     </div>
                     {/* 2/4 tinggi: Experience & Education */}
@@ -230,6 +172,7 @@ const About: React.FC <{ isMobile: boolean }> = ({ isMobile }) => {
             experiences={experiences}
             educations={educations}
             programmingLanguages={programmingLanguages}
+            data={data}
         />
     )
 };
